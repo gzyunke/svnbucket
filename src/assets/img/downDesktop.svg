@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="157px" height="91px" viewBox="0 0 157 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>桌面版</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="切图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="下载" transform="translate(-241.000000, -487.000000)">
+            <g id="Group-8" transform="translate(241.000000, 487.000000)">
+                <g id="Group-46">
+                    <rect id="Rectangle-57" fill="#333B46" x="15" y="0" width="128" height="88" rx="4"></rect>
+                    <circle id="Oval-29" fill="#D8D8D8" cx="79" cy="3" r="1"></circle>
+                    <rect id="Rectangle-104" fill="#515968" x="19" y="5" width="120" height="75" rx="1"></rect>
+                    <path d="M78.5,91 L52.5227744,91 C27.1398223,90.8270067 11.9299087,90.332994 6.89303372,89.5179618 C1.85615873,88.7029296 -0.420308717,87.1969423 0.0636313663,85 L78.5,85 L156.936369,85 C157.420309,87.1969423 155.143841,88.7029296 150.106966,89.5179618 C145.070091,90.332994 129.860178,90.8270067 104.477226,91 L78.5,91 Z" id="Combined-Shape" fill="#D2D4D9"></path>
+                    <path d="M68,85 L89,85 L88.5527864,85.8944272 L88.5527864,85.8944272 C88.2140024,86.5719952 87.5214761,87 86.763932,87 L70.236068,87 L70.236068,87 C69.4785239,87 68.7859976,86.5719952 68.4472136,85.8944272 L68,85 Z" id="Rectangle-54" fill="#9D9FA2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

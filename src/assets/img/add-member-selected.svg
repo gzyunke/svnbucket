@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>添加成员-勾选标签</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成员-目录权限添加成员" transform="translate(-695.000000, -430.000000)">
+            <g id="Group-54" transform="translate(320.000000, 237.000000)">
+                <g id="Group-14-Copy-2" transform="translate(289.000000, 193.000000)">
+                    <g id="Group-15" transform="translate(86.000000, 0.000000)">
+                        <path d="M0,1.2688147e-15 L22,1.2688147e-15 L22,1.33226763e-15 C23.1045695,1.12935919e-15 24,0.8954305 24,2 L24,24 L0,1.2688147e-15 Z" id="Rectangle-20" fill="#0CBABA"></path>
+                        <polyline id="Path-3" stroke="#FFFFFF" stroke-width="2" points="13 6.43131217 15.7150681 9 21 4"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>文件</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="源码" transform="translate(-231.000000, -350.000000)">
+            <g id="Group-13" transform="translate(190.000000, 104.000000)">
+                <g id="Group-20-Copy-4" transform="translate(20.000000, 233.000000)">
+                    <g id="符号-文件" transform="translate(19.000000, 12.000000)">
+                        <rect id="Rectangle-5" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M13.452412,1 L2.54758801,1 C2.39113429,1 2.26075619,1.05214153 2.15645372,1.15642458 C2.05215124,1.26070764 2,1.39106145 2,1.54748603 L2,14.4681564 C2,14.6141527 2.05215124,14.7392924 2.15645372,14.8435754 C2.26075619,14.9478585 2.39113429,15 2.54758801,15 L9.63494133,15 L14,11.2301676 L14,1.54748603 C14,1.39106145 13.9478488,1.26070764 13.8435463,1.15642458 C13.7392438,1.05214153 13.6088657,1 13.452412,1 Z" id="Shape" fill="#ACACAC" fill-rule="nonzero"></path>
+                        <polygon id="Path" fill="#FEFEFE" points="12 11 10 13 10 11"></polygon>
+                        <path d="M3,2 L13,2 L13,10.1796565 L9.66666667,10.1796565 C9.51780968,10.1796565 9.38755981,10.2324967 9.27591707,10.338177 C9.16427432,10.4438573 9.10845295,10.5759577 9.10845295,10.7344782 L9.10845295,14 L3,14 L3,2 L3,2 Z" id="Path" fill="#FEFEFE"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

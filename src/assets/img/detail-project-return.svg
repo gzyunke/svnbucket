@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>项目返回导航箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="源码" transform="translate(-67.000000, -76.000000)">
+            <g id="Group-14" transform="translate(0.000000, 64.000000)">
+                <g id="Group-5" transform="translate(30.000000, 10.000000)">
+                    <g id="Group" transform="translate(45.000000, 10.000000) rotate(-90.000000) translate(-45.000000, -10.000000) translate(37.000000, 2.000000)">
+                        <g id="Group-9">
+                            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                            <polyline id="Path-2" stroke="#ACACAC" stroke-width="1.66666667" stroke-linejoin="round" points="4 6 8.03545813 10 12 6.07029315"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

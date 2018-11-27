@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>银牌会员</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEEFF8" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M7.88167095,12.4666667 L6.18973689,12.4666667 L6.18973689,6.23470449 L5.625,6.23470449 L5.625,5.6696832 L5.625,5.66969205 L7.88167095,5.66969205 L7.88167095,6.20930277 L7.88167095,8.94526857 L10.6782304,5.66666667 L13.5,5.66969205 L7.88167095,12.466656 Z" id="path-2"></path>
+        <filter x="-6.3%" y="-7.4%" width="112.7%" height="129.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.649659864   0 0 0 0 0.649659864   0 0 0 0 0.649659864  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="头像下拉菜单" transform="translate(-1109.000000, -88.000000)" fill-rule="nonzero">
+            <g id="Group-18-Copy" transform="translate(1074.000000, 69.000000)">
+                <g id="Group-9" transform="translate(35.000000, 18.000000)">
+                    <g id="Group-19" transform="translate(0.000000, 1.000000)">
+                        <path d="M0.912634839,8.82684524 C0.912634839,13.2513364 4.53132945,16.8380952 8.99521548,16.8380952 C13.4591015,16.8380952 17.0777961,13.2513364 17.0777961,8.82684524 C17.0777961,4.40235404 13.4591015,0.815595238 8.99521548,0.815595238 C4.53132945,0.815595238 0.912634839,4.40235404 0.912634839,8.82684524 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                        <path d="M5.78912512,14.3309492 C7.77306074,15.4662663 10.2173702,15.4662663 12.2013058,14.3309492 C14.1852415,13.1956321 15.4073962,11.0974795 15.4073961,8.82684524 C15.4073961,5.31674888 12.5365651,2.47125357 8.99521548,2.47125357 C5.4538659,2.47125357 2.58303484,5.31674888 2.58303484,8.82684524 C2.58303479,11.0974795 3.80518951,13.1956321 5.78912512,14.3309492 Z" id="Shape" fill="#CCCCCC"></path>
+                        <g id="Combined-Shape">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                        <path d="M8.99521548,2.76615045 C12.4868439,2.76615045 15.3263845,5.53228774 15.4054452,8.97427065 C15.40656,8.92523628 15.4073497,8.87610982 15.4073497,8.82684524 C15.4073497,5.3167667 12.5365471,2.47125357 8.99521548,2.47125357 C5.45383742,2.47125357 2.58303484,5.3167667 2.58303484,8.82684524 C2.58303484,8.87610982 2.58377806,8.92523628 2.58493935,8.97427065 C2.664,5.53228774 5.5035871,2.76615045 8.99521548,2.76615045 Z" id="Shape" fill="#ABAFC6"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

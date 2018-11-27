@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="327px" height="251px" viewBox="0 0 327 251" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>星球显示1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="84.6585112%" y1="13.1282163%" x2="13.032163%" y2="85.0255268%" id="linearGradient-1">
+            <stop stop-color="#4F8874" offset="0%"></stop>
+            <stop stop-color="#6B515C" offset="62.7109736%"></stop>
+            <stop stop-color="#323C60" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="84.6585112%" y1="13.1282163%" x2="13.032163%" y2="85.0255268%" id="linearGradient-2">
+            <stop stop-color="#FECD67" offset="0%"></stop>
+            <stop stop-color="#F67461" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-3" cx="179.680755" cy="82" rx="23.6106115" ry="23.6"></ellipse>
+        <filter x="-2.1%" y="-2.1%" width="104.2%" height="104.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="-1" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.921568627   0 0 0 0 0.474509804   0 0 0 0 0.133333333  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-5" cx="207.693345" cy="121.2" rx="10.0044964" ry="10"></ellipse>
+        <filter x="-5.0%" y="-5.0%" width="110.0%" height="110.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="-1" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.921568627   0 0 0 0 0.474509804   0 0 0 0 0.133333333  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="切图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(0.000000, -147.000000)">
+            <g id="Group-23" transform="translate(-105.000000, 147.000000)">
+                <g id="Group-19" transform="translate(56.025180, 0.000000)">
+                    <ellipse id="Oval-6" fill="url(#linearGradient-1)" cx="125.256295" cy="125.2" rx="125.256295" ry="125.2"></ellipse>
+                    <path d="M132.059353,232 C192.174952,232 240.908273,183.288581 240.908273,123.2 C240.908273,63.1114192 192.174952,14.4 132.059353,14.4 C71.9437535,14.4 23.2104317,63.1114192 23.2104317,123.2 C23.2104317,183.288581 71.9437535,232 132.059353,232 Z" id="Oval-6" fill="#F9F5DC"></path>
+                    <ellipse id="Oval-6" fill="url(#linearGradient-2)" cx="124.856115" cy="125.6" rx="108.848921" ry="108.8"></ellipse>
+                    <g id="Oval-7">
+                        <use fill="#FE992D" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Oval-8">
+                        <use fill="#FE992D" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    </g>
+                    <ellipse id="Oval-9" fill="#2BB8AC" cx="70.4316547" cy="49.6" rx="7.20323741" ry="7.2"></ellipse>
+                    <ellipse id="Oval-10" fill="#2BB8AC" cx="52.823741" cy="68" rx="3.20143885" ry="3.2"></ellipse>
+                    <ellipse id="Oval-10-Copy" fill="#2BB8AC" cx="55.625" cy="105.2" rx="2.80125899" ry="2.8"></ellipse>
+                    <ellipse id="Oval-10-Copy-3" fill="#FFCD50" cx="70.8318345" cy="68.4" rx="2.80125899" ry="2.8"></ellipse>
+                    <ellipse id="Oval-10-Copy-4" fill="#FFCD50" cx="164.473921" cy="128.4" rx="2.80125899" ry="2.8"></ellipse>
+                    <ellipse id="Oval-10-Copy-5" fill="#FFCD50" cx="201.690647" cy="157.6" rx="4.00179856" ry="4"></ellipse>
+                    <ellipse id="Oval-10-Copy-2" fill="#2BB8AC" cx="81.2365108" cy="126.8" rx="3.60161871" ry="3.6"></ellipse>
+                    <ellipse id="Oval-11" fill="#F06E0E" cx="175.278777" cy="68" rx="2.40107914" ry="2.4"></ellipse>
+                    <ellipse id="Oval-11-Copy" fill="#F06E0E" cx="186.883993" cy="74.8" rx="2.00089928" ry="2"></ellipse>
+                    <ellipse id="Oval-11-Copy-2" fill="#F06E0E" cx="188.084532" cy="94.4" rx="1.60071942" ry="1.6"></ellipse>
+                </g>
+                <path d="M55.2329191,117.052851 C18.1396267,124.079405 -4.50067625,133.447979 -4.50067625,143.735604 C-4.50067625,165.539429 97.1984774,183.214921 222.650741,183.214921 L222.650741,183.214921 C348.103005,183.214921 449.802158,165.539429 449.802158,143.735604 C449.802158,126.421986 385.677119,111.711433 296.453533,106.386817" id="Oval-12" stroke="#1BEBEF" stroke-width="3.2" transform="translate(222.650741, 144.800869) rotate(-335.000000) translate(-222.650741, -144.800869) "></path>
+                <path d="M55.3275967,128.978381 C24.9708513,133.655024 6.49770057,139.842914 6.49770057,146.628782 C6.49770057,161.209099 91.7810138,173.028782 196.983312,173.028782 C302.18561,173.028782 387.468924,161.209099 387.468924,146.628782 C387.468924,137.692862 355.435108,129.793881 306.414747,125.017289" id="Oval-13" stroke="#1AECF1" stroke-width="2.4" opacity="0.449999988" transform="translate(196.983312, 149.023036) rotate(2.000000) translate(-196.983312, -149.023036) "></path>
+                <ellipse id="Oval-14" fill="#1DEBF1" cx="336.951439" cy="231.2" rx="19.2086331" ry="19.2"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

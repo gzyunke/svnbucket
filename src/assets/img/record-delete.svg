@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>删除</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="z'z" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="提交记录-显示2" transform="translate(-284.000000, -590.000000)" fill="#DA405C">
+            <g id="修改-copy-2" transform="translate(284.000000, 590.000000)">
+                <polygon id="Shape" fill-rule="nonzero" points="1.17021277 12.8153846 1.17021277 4.09230769 4.04255319 4.09230769 4.04255319 1.18461538 8.82978723 1.18461538 8.82978723 2.29085748 10 2.29085748 10 1.18461538 10 0 2.87234043 0 0 2.90769231 0 14 10 14 10 12.0957384 8.82978723 12.0957384 8.82978723 12.8153846"></polygon>
+                <polygon id="+" stroke="#DA405C" stroke-width="0.5" points="11.4066318 5.0087108 9.504363 6.90766551 7.59336824 5 7 5.59233449 8.91099476 7.5 7 9.40766551 7.59336824 10 9.504363 8.09233449 11.4066318 9.9912892 12 9.3989547 10.0977312 7.5 12 5.6010453"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

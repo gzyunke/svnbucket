@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>文件箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="提交记录-显示2" transform="translate(-262.000000, -509.000000)">
+            <g id="Group-14" transform="translate(262.000000, 509.000000)">
+                <rect id="Rectangle-9" x="0" y="0" width="12" height="12"></rect>
+                <polygon id="Triangle" fill="#98999D" points="9 6 4 10 4 2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

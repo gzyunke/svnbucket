@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="8px" viewBox="0 0 5 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>添加目录-标题箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成员-目录权限添加目录" transform="translate(-532.000000, -344.000000)" fill-rule="nonzero" fill="#ACACAC">
+            <g id="Group-20" transform="translate(485.000000, 337.000000)">
+                <path d="M51.8600311,14.8768041 C52.0466563,14.7114119 52.0466563,14.4357582 51.8600311,14.270366 L48.1741835,10.9969784 L51.8600311,7.73048227 C52.0466563,7.56509006 52.0466563,7.28943637 51.8600311,7.12404416 C51.6734059,6.95865195 51.3623639,6.95865195 51.1757387,7.12404416 L47.1399689,10.6937594 C46.9533437,10.8591516 46.9533437,11.1348053 47.1399689,11.3001975 L51.1679627,14.8699127 C51.3623639,15.0421963 51.6734059,15.0421963 51.8600311,14.8768041 Z" id="Shape" transform="translate(49.500000, 11.000000) rotate(-180.000000) translate(-49.500000, -11.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

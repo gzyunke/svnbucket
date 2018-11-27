@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>返回上一步箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成员-目录权限添加成员" transform="translate(-342.000000, -257.000000)">
+            <g id="Group-54" transform="translate(320.000000, 237.000000)">
+                <g id="Group-53" transform="translate(22.000000, 20.000000)">
+                    <rect id="返回" x="0" y="0" width="20" height="20"></rect>
+                    <polygon id="Shape" fill="#ACACAC" fill-rule="nonzero" points="14 4 13 3 7 9 7 9 6 10 6 10 6 10 7 11 7 11 13 17 14 16 8 10"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

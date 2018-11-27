@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>添加目录-返回箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成员-目录权限添加目录" transform="translate(-519.000000, -384.000000)">
+            <g id="返回-(1)" transform="translate(519.000000, 382.000000)">
+                <g id="Group-53" transform="translate(0.000000, 2.000000)">
+                    <rect id="Rectangle-14" x="0" y="0" width="15" height="15"></rect>
+                    <path d="M13.7382355,13.8484542 C13.7382355,13.8484542 13.6009757,14.1894322 13.4183056,13.8484542 C13.4183056,13.8484542 11.3763038,7.90082396 6.39839481,9.39891801 L6.39839481,11.2451355 C6.39839481,11.2451355 6.31864417,12.3306719 5.33752586,11.6236861 L0.443062314,7.54643612 C0.443062314,7.54643612 -0.594623307,7.00143058 0.506120958,6.25596323 L5.45251515,2.15455044 C5.45251515,2.15455044 6.19622172,1.6426569 6.37521148,2.48209072 L6.38077548,4.47417993 C6.38170281,4.47507485 15.6587421,4.90374095 13.7382355,13.8484542 Z" id="Shape" fill="#65A0D5" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

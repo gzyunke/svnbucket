@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="134px" viewBox="0 0 124 134" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>mobile phone</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="61" cy="89" r="60"></circle>
+        <path d="M61,149 C94.137085,149 121,122.137085 121,89 C121,74.7704948 121.430241,54.5857556 113.153682,17.4202901 C107.847448,-6.40708304 78.7210106,1.47693111 58.8486003,0.559051978 C37.5340162,-0.425439168 32.7675907,0.559051978 28.5160852,0.559051978 C-1.28545248,0.559051978 1,74.7170707 1,89 C1,122.137085 27.862915,149 61,149 Z" id="path-2"></path>
+        <rect id="path-4" x="0" y="0" width="90" height="144" rx="8"></rect>
+        <rect id="path-5" x="10" y="16" width="70" height="123" rx="2"></rect>
+        <rect id="path-6" x="10" y="22" width="70" height="116"></rect>
+        <rect id="path-7" x="17" y="43" width="56" height="90" rx="2"></rect>
+    </defs>
+    <g id="切图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-793.000000, -5366.000000)">
+            <g id="Group" transform="translate(0.000000, 5011.000000)">
+                <g id="Group-39" transform="translate(794.000000, 338.000000)">
+                    <g id="Group-34">
+                        <g id="Oval">
+                            <use fill="#DEECF1" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <circle stroke="#C2D8DF" stroke-width="2" cx="61" cy="89" r="61"></circle>
+                        </g>
+                        <g id="Group-35">
+                            <mask id="mask-3" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g mask="url(#mask-3)">
+                                <g transform="translate(15.000000, 17.000000)">
+                                    <g id="Rectangle-93" fill="none">
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                                        <rect stroke="#C2D8DF" stroke-width="2" x="1" y="1" width="88" height="142" rx="8"></rect>
+                                    </g>
+                                    <g id="Rectangle-94" fill="none">
+                                        <use fill="#C2D8DF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                                        <rect stroke="#C2D8DF" stroke-width="1" x="10.5" y="16.5" width="69" height="122" rx="2"></rect>
+                                    </g>
+                                    <g id="Rectangle-96" fill="none">
+                                        <use fill="#DFEDF2" fill-rule="evenodd" xlink:href="#path-6"></use>
+                                        <rect stroke="#C2D8DF" stroke-width="1" x="10.5" y="22.5" width="69" height="115"></rect>
+                                    </g>
+                                    <rect id="Rectangle-97" fill="#C2D8DF" fill-rule="evenodd" x="10" y="37" width="69" height="1"></rect>
+                                    <g id="Rectangle-98" fill="none">
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+                                        <rect stroke="#C2D8DF" stroke-width="1" x="17.5" y="43.5" width="55" height="89" rx="2"></rect>
+                                    </g>
+                                    <rect id="Rectangle-99" fill="#C2D8DF" fill-rule="evenodd" x="26" y="51" width="19" height="2" rx="1"></rect>
+                                    <rect id="Rectangle-99-Copy" fill="#C2D8DF" fill-rule="evenodd" x="26" y="71" width="12" height="2" rx="1"></rect>
+                                    <rect id="Rectangle-99-Copy-2" fill="#C2D8DF" fill-rule="evenodd" x="26" y="91" width="22" height="2" rx="1"></rect>
+                                    <rect id="Rectangle-99-Copy-3" fill="#C2D8DF" fill-rule="evenodd" x="26" y="111" width="22" height="2" rx="1"></rect>
+                                    <rect id="Rectangle-100" fill="#FF5400" fill-rule="evenodd" x="26" y="55" width="30" height="7" rx="3.5"></rect>
+                                    <rect id="Rectangle-100-Copy" fill="#588B9D" fill-rule="evenodd" x="26" y="75" width="38" height="7" rx="3.5"></rect>
+                                    <rect id="Rectangle-100-Copy-2" fill="#C2D8DF" fill-rule="evenodd" x="26" y="95" width="21" height="7" rx="3.5"></rect>
+                                    <rect id="Rectangle-100-Copy-3" fill="#C2D8DF" fill-rule="evenodd" x="26" y="115" width="34" height="7" rx="3.5"></rect>
+                                    <rect id="Rectangle-101" fill="#FFFFFF" fill-rule="evenodd" x="23" y="27" width="46" height="7" rx="3.5"></rect>
+                                    <circle id="Oval-27" fill="#ADC5CF" fill-rule="evenodd" cx="15.5" cy="19.5" r="1.5"></circle>
+                                    <rect id="Rectangle-102" fill="#ADC5CF" fill-rule="evenodd" x="19" y="18" width="9" height="3" rx="1.5"></rect>
+                                    <rect id="Rectangle-102-Copy" fill="#ADC5CF" fill-rule="evenodd" x="41" y="18" width="9" height="3" rx="1.5"></rect>
+                                    <rect id="Rectangle-102-Copy-2" fill="#ADC5CF" fill-rule="evenodd" x="68" y="18" width="9" height="3" rx="1.5"></rect>
+                                    <rect id="Rectangle-95" fill="#D8E8ED" fill-rule="evenodd" x="55" y="7" width="9" height="2" rx="1"></rect>
+                                    <circle id="Oval-26" fill="#D8E8ED" fill-rule="evenodd" cx="46" cy="8" r="2"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>文件夹</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="源码" transform="translate(-231.000000, -190.000000)" fill-rule="nonzero" fill="#65A0D5">
+            <g id="Group-13" transform="translate(190.000000, 104.000000)">
+                <g id="Group-20" transform="translate(20.000000, 72.000000)">
+                    <g id="Group-19" transform="translate(21.000000, 10.000000)">
+                        <path d="M12.7272771,5.89473852 L7.44081861,5.89473852 L6.99999999,5.26315369 C6.54882905,4.43050545 6.43020409,4 5.72727711,4 L1.27272288,4 C0.569795887,4 0,4.56551179 0,5.26315369 L0,7.15789221 L0,7.78947705 L0,14.7368463 C0,15.4344882 0.569795903,16 1.27272288,16 L12.7272771,16 C13.4302041,16 14,15.4344882 14,14.7368463 L14,7.15789222 C14.0000161,6.46025031 13.4302041,5.89473852 12.7272771,5.89473852 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

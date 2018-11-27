@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>头部-用户下拉箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的项目-显示1" transform="translate(-1389.000000, -21.000000)">
+            <g id="Group-30">
+                <g id="Group-2" transform="translate(1240.000000, 13.000000)">
+                    <g id="Group" transform="translate(149.000000, 8.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="22" height="22"></rect>
+                        <polyline id="Path-2" stroke="#808080" stroke-width="2.08333333" stroke-linejoin="round" points="6 9 11.0443227 14 16 9.08786644"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

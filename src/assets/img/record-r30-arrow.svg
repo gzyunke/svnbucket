@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>R30箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="z'z" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="提交记录" transform="translate(-1390.000000, -200.000000)" fill-rule="nonzero" fill="#98999D">
+            <g id="Group-27" transform="translate(240.000000, 173.000000)">
+                <g id="箭头-(5)" transform="translate(1150.000000, 27.000000)">
+                    <path d="M1.86759406,15.6785782 C4.13519817,13.3865023 6.41598602,11.0811003 8.68359012,8.78902431 C9.10546996,8.36259157 9.10546996,7.65631234 8.68359012,7.22987962 C6.41598602,4.92447764 4.14838192,2.63240166 1.86759406,0.326999683 C0.865629465,-0.685778062 -0.676868683,0.886692658 0.325095931,1.88614437 C2.34220888,3.92502591 4.35932183,5.96390743 6.37643478,8.00278895 C4.35932183,10.0416705 2.34220888,12.080552 0.325095915,14.1061075 C-0.676868683,15.1188853 0.878813203,16.67803 1.86759406,15.6785782 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

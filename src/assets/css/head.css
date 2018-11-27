@@ -1,0 +1,453 @@
+
+body {
+    font-size: 14px;
+}
+
+* {
+    text-decoration: none;
+    font-family: MicrosoftYaHei, 'Microsoft Yahei', 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+ul {
+    padding: 0;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    min-width: 720px;
+}
+
+#header .navbox {
+    margin-top: 20px;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+
+}
+
+.navbox .logo {
+    margin-left: 20px;
+    float: left;
+    height: 50px;
+    min-width: 150px;
+}
+
+#header .logo img {
+    /*width:50px;*/
+    /*height: 50px;*/
+    float: left;
+}
+
+#header .logo p {
+    font-size: 30px;
+    margin-top: 14px;
+    font-weight: 600;
+    line-height: 25px;
+    float: left;
+    color: black;
+}
+
+#header .navbox .myproject {
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    line-height: 24px;
+
+}
+
+#header .navbox .myproject strong {
+
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#myp {
+    font-size: 18px;
+    color: rgba(70, 70, 70, 0.9);
+    line-height: 24px;
+    flex-wrap: nowrap;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .navbox .myproject img {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+
+}
+
+#header .navbox .userInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .navbox .userInfo .opera {
+    width: 200px;
+    margin: 1px 0 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .navbox .userInfo .opera div {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.head-addproject {
+    background: url('../img/head-add.svg') no-repeat;
+}
+
+.head-addproject:hover {
+    background: url('../img/head-add-Y.svg') no-repeat;
+}
+
+.head-index {
+    background: url('../img/header-project-list-N.svg') no-repeat;
+}
+
+.head-index:hover {
+    background: url('../img/header-project-list-Y.svg') no-repeat;
+}
+
+.head-help {
+    background: url('../img/head-help.svg') no-repeat;
+}
+
+.head-help:hover {
+    background: url('../img/head-help-Y.svg') no-repeat;
+}
+
+.head-message {
+    background: url('../img/head-message.svg') no-repeat;
+}
+
+.head-message:hover {
+    background: url('../img/head-message-Y.svg') no-repeat;
+}
+
+.message {
+    margin-right: 35px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+#header .navbox .userInfo .opera .message .hasMessage {
+    position: relative;
+    top: -21px;
+    left: 21px;
+    width: 7px;
+    height: 7px;
+    display: block;
+    float: right;
+    background: #ED3333;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+#hide-user-box {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    width: 152px;
+    height: 244px;
+    position: absolute;
+    top: 70px;
+    z-index: 100;
+    right: 20px;
+
+}
+
+#hide-user-box div {
+    height: 64px;
+    width: 152px;
+    margin-top: 6px;
+
+}
+
+#hide-user-box div img {
+    float: left;
+    margin: 7px 0 -1px 34px;
+}
+
+#hide-user-box div p {
+    float: left;
+    margin: 7px 0 -1px 6px;
+    font-size: 14px;
+    color: #474747;
+    letter-spacing: 0;
+}
+
+#hide-user-box div a {
+    font-size: 12px;
+    color: #1891F0;
+    letter-spacing: 0;
+    text-decoration: none;
+    margin: 0 0 0 58px;
+}
+
+#hide-user-box ul {
+    list-style: none;
+    width: 152px;
+
+}
+
+#hide-user-box ul li {
+    height: 41px;
+    font-size: 14px;
+    color: #474747;
+    letter-spacing: 0;
+    border-top: 1px solid #E8E8E8;
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 0 #E8E8E8;
+    text-indent: 58px;
+    line-height: 42px;
+    cursor: pointer;
+    border-bottom: 0;
+    margin-left: -1px;
+}
+
+#hide-user-box ul li .li-lefter {
+    width: 3px;
+    height: 42px;
+    background: #1891F0;
+    float: left;
+    margin-top: -1px;
+    display: block;
+    opacity: 0;
+}
+
+#hide-user-box ul li .last-li {
+    width: 152px;
+    height: 1px;
+    position: relative;
+    background: #FFF;
+    top: -7px;
+
+}
+
+#hide-user-box ul li:hover {
+    background-color: #ECEDF0;
+}
+
+#hide-user-box ul li:hover .li-lefter {
+    opacity: 1;
+}
+
+#hide-user-box ul .contact-us {
+    background: url('../img/contact-us.svg') 36px 13px no-repeat;
+}
+
+#hide-user-box ul .log-out {
+    background: url('../img/log-out.svg') 36px 13px no-repeat;
+
+}
+
+#hide-user-box ul .suggestion {
+    background: url('../img/suggestion.svg') 36px 13px no-repeat;
+}
+
+#hide-user-box ul .accout-setting {
+    background: url('../img/accout-setting.svg') 36px 13px no-repeat;
+}
+
+#myProjectBox {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: #F0F0F0;
+    border: 1px solid #E8E8E8;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+#myProjectBox .inner-search {
+    margin: 8px auto 0;
+    width: 281px;
+    height: 30px;
+    border: 1px solid #E8E8E8;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #ACACAC;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: nowrap row;
+    padding: 0;
+}
+
+#myProjectBox .inner-search:hover {
+    border: 1px solid rgba(56, 56, 56, 0.6);
+}
+
+#myProjectBox .inner-search .inner-search-text {
+    width: 247px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    border-radius: 2px 0 0 2px;
+    font-size: 16px;
+    text-indent: 10px;
+    font-weight: normal;
+    background-color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+#myProjectBox .inner-search .inner-search-text::-webkit-input-placeholder {
+    font-size: 12px;
+    color: #464646;
+    opacity: 0.6;
+}
+
+#myProjectBox .inner-search a {
+    width: 34px;
+    height: 30px;
+    display: block;
+    float: left;
+    background: #FFF;
+    border-radius: 0 2px 2px 0;
+}
+
+#myProjectBox .inner-search a img {
+    position: relative;
+    left: 3px;
+    top: 5px;
+}
+
+#myProjectBox .searcher-result {
+    width: 300px;
+    height: 250px;
+    margin: 8px auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #FFF;
+}
+
+#myProjectBox .searcher-result ul {
+    list-style: none;
+}
+
+#myProjectBox .searcher-result ul li {
+    box-shadow: 0 1px 0 0 #E8E8E8;
+}
+
+#myProjectBox .searcher-result ul .searcher-result-li div {
+    width: 285px;
+    height: 44px;
+    display: block;
+    font-size: 12px;
+    color: #808080;
+    line-height: 44px;
+    text-align: left;
+    letter-spacing: 0;
+}
+
+#myProjectBox .searcher-result ul .searcher-result-li img {
+    /*height: 26px;*/
+    /*width: 26px;*/
+    border-radius: 2px;
+    margin: 10px 0 0 22px;
+    display: block;
+    float: left;
+}
+
+#myProjectBox .searcher-result ul .searcher-result-li div a {
+    position: relative;
+    left: 6px;
+    float: left;
+    line-height: 44px;
+    margin-left: 8px;
+    font-size: 12px;
+    color: #808080;
+    letter-spacing: 0;
+    display: block;
+}
+
+#myProjectBox .searcher-result ul li:hover {
+    background: #EDEDED;
+}
+
+#myProjectBox .searcher-result ul .searcher-result-li div .currentSelectedProject {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 0;
+}
+
+#myProjectBox .searcher-result ul .searcher-result-li div .currentSelectedProject .currentSelected {
+    width: 20px;
+    height: 20px;
+    margin: 12px 0 0 8px;
+}
+
+#header .navbox .userInfo .opera .message .hasMessage img {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+}
+
+#header .navbox .userInfo .user {
+    margin-top: 2px;
+    line-height: 21px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#header .navbox .userInfo .user img {
+    width: 38px;
+    height: 38px;
+    margin-top: -10px;
+    border-radius: 20px;
+}
+
+#header .navbox .userInfo .user a {
+    width: 99px;
+    height: 19px;
+    margin-left: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    color: rgba(70, 70, 70, 0.8);
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+#header .navbox .userInfo .user a:hover {
+    color: #0093e3;
+}
+
+#header .navbox .userInfo .user a img {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: 5px;
+}
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>源码标题返回箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="源码" transform="translate(-231.000000, -129.000000)" fill-rule="nonzero" fill="#65A0D5">
+            <g id="返回-(1)" transform="translate(231.000000, 125.000000)">
+                <path d="M13.7128554,15.823358 C13.7128554,15.823358 13.5758492,16.1636138 13.3935165,15.823358 C13.3935165,15.823358 11.3552872,9.88832541 6.38657438,11.3832463 L6.38657438,13.2255533 C6.38657438,13.2255533 6.30697107,14.3087905 5.32766529,13.6033022 L0.442243799,9.5346882 C0.442243799,9.5346882 -0.593524797,8.99083704 0.505185947,8.24694867 L5.44244215,4.15422309 C5.44244215,4.15422309 6.18477479,3.64341379 6.36343388,4.4810696 L6.3689876,6.46893937 C6.36991322,6.46983239 15.629814,6.89759053 13.7128554,15.823358 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

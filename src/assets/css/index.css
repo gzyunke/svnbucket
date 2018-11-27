@@ -1,0 +1,934 @@
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    min-width: 900px;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: MicrosoftYaHei, 'Microsoft Yahei', 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.headNav {
+    height: 50px;
+    width: 100%;
+    min-width: 800px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: 0.4s;
+}
+
+.headRightNav {
+    position: absolute;
+    right: 0;
+}
+
+.mainNav {
+    transition: 0.3s;
+    margin: 15px 0 0 0;
+    list-style: none;
+}
+
+.mainNav li {
+    float: right;
+    margin: 0 0 0 3px;
+    display: block;
+    width: 69px;
+    height: 32px;
+    /*background: gray;*/
+    line-height: 32px;
+    text-indent: 17px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.headLeftNav .iconBlack {
+    color: #000;
+    font-size: 24px;
+}
+
+.navMarginTop {
+    margin: 8px 0 0 0;
+}
+
+.mainNav li.navHover {
+}
+
+.mainNav li.navHover:hover {
+    background: rgba(200, 200, 200, 0.3) !important;
+}
+
+.mainNav li.navLiColor strong {
+    color: #474747;
+}
+
+.mainNav li.navLiColor:hover strong {
+    color: #1891F0;
+}
+
+.headNavBlack {
+    background: rgba(255, 255, 255, 1);
+}
+
+.mainNav li.aboutUs {
+    width: 100px;
+}
+
+.mainNav li.userOperaLi {
+    width: 160px;
+    text-indent: 0;
+    line-height: 0;
+    cursor: default;
+}
+
+.mainNav li strong {
+    font-size: 17px;
+    color: #FFFFFF;
+    line-height: 17px;
+    font-weight: 100;
+    transition: .1s;
+}
+
+/*.mainNav li:hover strong{*/
+/*color: #1891F0!important;*/
+/*}*/
+/*.mainNav li:hover{*/
+/*background: rgba(123,114,110,0.3);*/
+/*}*/
+.mainNav li.userOperaLi:hover {
+    background: rgba(123, 114, 110, 0);
+}
+
+.liBtn {
+    border-radius: 4px;
+    display: inline-block;
+    width: 55px;
+    height: 32px;
+    float: right;
+    line-height: 32px;
+    text-indent: 12px;
+    font-family: 'PingFangSC-Regular', "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 100;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+registerBtn {
+    border: 1px solid #1891F0;
+    line-height: 30px;
+    margin-right: 18px;
+    color: #fff;
+    transition: .2s;
+}
+
+.registerBtn:hover {
+    background: #1891F0;
+    color: #FFF;
+}
+
+.loginBtn {
+    background: #1891F0;
+    margin-right: 14px;
+
+}
+
+.headLeftNav {
+    margin: 10px 0 0 20px;
+    float: left;
+}
+
+.headLeftNav h1 {
+    display: block;
+    margin: 0;
+    color: #FFF;
+    transition: 0.4s;
+    font-size: 38px;
+}
+
+.imgBox {
+
+    width: 100%;
+    height: 720px;
+    background-image: radial-gradient(51% 90%, #3F7EB4 12%, #202545 91%);
+    overflow-x: hidden;
+    /*position: relative;*/
+}
+
+.imgBox img {
+    position: absolute;
+    overflow-x: hidden;
+}
+
+.bigEddy {
+    /*transform: rotate(180deg);*/
+    top: 110px;
+    left: 187px;
+}
+
+.bigStart {
+    top: 147px;
+    left: 0;
+}
+
+.spaceman {
+    top: 418px;
+    left: 0;
+}
+
+.littleStart {
+    top: 131px;
+    right: 69px;
+}
+
+.airship {
+    top: 374px;
+    right: 222px;
+}
+
+.littleEddy {
+    top: 258px;
+    right: 259px;
+}
+
+.lotsLittleStart {
+    top: 64px;
+}
+
+.house {
+    top: 434px;
+    width: 100%;
+    height: 286px;
+}
+
+.showBox {
+    width: 626px;
+    height: 274px;
+    position: relative;
+    margin: 168px auto;
+    /*left: 50%;*/
+    /*margin-left: -313px;*/
+}
+
+.showBox h2 {
+    font-size: 44px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+.showSpan {
+    opacity: 0.9;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+/*.showBox a {*/
+    /*box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.10);*/
+    /*border-radius: 4px;*/
+    /*background: #1891F0;*/
+    /*display: block;*/
+    /*width: 264px;*/
+    /*height: 58px;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    /*text-indent: 92px;*/
+    /*line-height: 58px;*/
+    /*font-size: 20px;*/
+    /*color: #FFFFFF;*/
+    /*letter-spacing: 0;*/
+    /*cursor: pointer;*/
+    /*transition: .2s;*/
+/*}*/
+
+.join:hover {
+    background: rgba(24, 145, 240, 0.5);
+}
+
+.mainBox {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.introduceBox {
+    padding-top: 60px;
+    height: 497px;
+
+}
+
+.boxWidth {
+    width: 1214px;
+    margin: 0 auto;
+}
+
+.introduceBox h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #474747;
+    letter-spacing: 0;
+    font-weight: normal;
+    margin: 0 auto;
+}
+
+.introduceBox .singleIntro {
+    height: 59px;
+    width: 511px;
+    float: left;
+    margin-top: 60px;
+    margin-left: 103px;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.singleIntro img {
+    float: left;
+    width: 54px;
+    height: 54px;
+    margin: 0;
+}
+
+.singleIntro h3 {
+    float: left;
+    margin: 11px 0 0 23px;
+    font-size: 22px;
+    color: #4F657B;
+    letter-spacing: 0;
+    font-weight: normal;
+}
+
+.singleIntro span {
+    display: block;
+    font-size: 17px;
+    color: #474747;
+    letter-spacing: 0;
+    margin: 8px 0 0 79px;
+}
+
+.introRight {
+    margin-left: 74px !important;
+}
+
+.introduceBackgroud {
+    background: #FAFAFA;
+    height: auto;
+    width: 100%;
+}
+
+.boxHeight {
+    height: 624px;
+}
+
+.codeManageBox {
+
+}
+
+.introTitle {
+    font-family: PingFangSC-Semibold, "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    display: block;
+    font-size: 30px;
+    color: #474747;
+    letter-spacing: 0;
+    margin-top: 100px;
+    float: left;
+    font-weight: 500;
+}
+
+.introduce {
+    font-size: 16px;
+    color: #4E5157;
+    letter-spacing: 0;
+    line-height: 26px;
+    width: 330px;
+    display: block;
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+    max-height: 420px;
+    margin: 10px 0 0 0;
+    float: left;
+}
+
+.introduceContainer {
+    float: left;
+    margin-top: -8px;
+}
+
+.introduceImg {
+    float: right;
+    margin-top: 25px;
+}
+
+.oppositeContainer {
+    float: right;
+}
+
+.oppositeImg {
+    float: left;
+}
+
+.heightPublicity {
+    margin-top: -20px;
+    height: 729px;
+}
+
+.publicityBox {
+    width: 100%;
+    height: 100%;
+}
+
+.publicityBox h2 {
+    font-size: 36px;
+    color: #474747;
+    letter-spacing: 0;
+    font-weight: 100;
+    margin: -5px auto;
+    text-align: center;
+}
+
+.publicityBox .publicityBoxH2 {
+    padding-top: 50px;
+}
+
+.publicityImgBox {
+    width: 1200px;
+    height: 409px;
+    margin: 55px auto;
+    background: #FFFFFF;
+    box-shadow: 0 6px 20px 0 rgba(0, 43, 76, 0.10);
+    border-radius: 4px;
+}
+
+.wordImg {
+    float: left;
+    margin: 49px 0 0 10px;
+}
+
+.publicityeQuipment {
+    float: right;
+    margin: 74px 143px 0 0;
+    width: 383px;
+    height: 220px;
+}
+
+.publicityeQuipment h4 {
+    font-size: 22px;
+    color: #474747;
+    letter-spacing: 0;
+    font-weight: normal;
+    margin: 0;
+}
+
+.mobileBox {
+    width: 200px;
+    height: 164px;
+    float: left;
+    margin: 30px 0 0 0;
+    cursor: pointer;
+}
+
+.quipmentSpan1 {
+    text-align: center;
+    font-size: 16px;
+    color: #808080;
+    letter-spacing: 0;
+    display: block;
+    margin: 15px 0 0 -74px;
+}
+
+.quipmentSpan {
+    text-align: center;
+    font-size: 16px;
+    color: #808080;
+    letter-spacing: 0;
+    display: block;
+    margin: 15px 0 0 0;
+}
+
+.computerBox {
+    width: 138px;
+    height: 164px;
+    float: left;
+    margin: 30px 0 0 40px;
+}
+
+.marginTop {
+    margin-top: 7px;
+}
+
+.footer {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.footer p {
+    height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #808080;
+    letter-spacing: 0;
+    margin: 40px 0 0 0;
+}
+
+/*下载页面*/
+.indexDownloadBox {
+    width: 100%;
+    height: auto;
+    padding-bottom: 130px;
+}
+
+.downloadTitle {
+    text-align: center;
+    font-size: 48px;
+    color: #474747;
+    margin-top: 110px;
+    font-weight: normal;
+}
+
+.downloadIntroduce {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #ACACAC;
+    line-height: 32px;
+}
+
+.spanTop {
+    margin-top: -18px;
+}
+
+.downloadType {
+    margin: 56px auto;
+    width: 1200px;
+    height: 400px;
+}
+
+.downloadType .downDesktop {
+    width: 400px;
+    height: 400px;
+    float: left;
+}
+
+.desktopImg {
+    display: block;
+    margin: 92px auto;
+
+}
+
+.typeTitle {
+    font-size: 18px;
+    color: #474747;
+    text-align: center;
+}
+
+.desktopUrl {
+    display: block;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    width: 98px;
+    height: 58px;
+    font-size: 14px;
+    color: #474747;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+
+}
+
+.desktopBox {
+    height: 60px;
+    margin: 67px auto;
+    width: 220px;
+}
+
+.windowsUrl {
+    margin-left: 20px;
+}
+
+.qrCode {
+    margin: 58px auto;
+    display: block;
+}
+
+.mobileUrl {
+    display: block;
+    font-size: 14px;
+    color: #474747;
+    height: 58px;
+    width: 208px;
+    margin: 70px auto;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 60px;
+}
+
+/*关于我们*/
+.aboutUsHead {
+    width: 100%;
+    height: 460px;
+    background: #376999;
+    font-family: PingFangSC-Regular, "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.aboutUsHead img {
+    position: absolute;
+}
+
+.aboutSpaceman {
+    top: 145px;
+    left: 50%;
+    z-index: 2;
+    margin-left: -140px;
+}
+
+.aboutBigStart {
+    top: 230px;
+    left: 50%;
+    margin-left: 60px;
+}
+
+.aboutLittleStart {
+    top: 37px;
+    right: 84px;
+}
+
+.aboutHeadTitle {
+    font-family: PingFangSC-Regular, "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    display: block;
+    width: 520px;
+    height: 56px;
+    position: absolute;
+    left: 73px;
+    top: 215px;
+    font-weight: normal;
+}
+
+.aboutMain {
+    background: #FAFAFA;
+    width: 100%;
+    height: 426px;
+}
+
+.aboutTitle {
+
+    font-size: 36px;
+    margin: 0;
+    color: #474747;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 60px 0 0 0;
+    font-weight: normal;
+}
+
+.aboutSpan {
+    font-size: 16px;
+    color: #474747;
+    line-height: 26px;
+    display: block;
+    width: 750px;
+    height: 156px;
+    text-align: center;
+    margin: 55px auto;
+}
+
+.contactUs {
+    height: 694px;
+    width: 100%;
+    margin: 0;
+}
+
+.addressBox {
+    margin: 60px auto;
+    width: 980px;
+    height: 426px;
+    background: url('../img/map.png') no-repeat;
+}
+
+.address {
+    float: right;
+    display: block;
+    background: #FFFFFF;
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 2px;
+    width: 380px;
+    height: 220px;
+    margin: 84px 185px 0 0;
+}
+
+.guangzhou {
+    display: block;
+    margin: 18px 0 0 30px;
+    text-align: left;
+    font-size: 28px;
+    color: #474747;
+    letter-spacing: 0;
+    font-weight: normal;
+}
+
+.addressSpan {
+    font-size: 16px;
+    color: #474747;
+    letter-spacing: 0;
+    width: 320px;
+    display: block;
+    margin: 14px 0 0 30px;
+}
+
+/*购买页面*/
+.buyHead {
+    height: 350px;
+    width: 100%;
+    background-image: radial-gradient(51% 90%, #3F7EB4 12%, #202545 91%);
+}
+
+.buyHead img {
+    position: absolute;
+}
+
+.buyBigStart {
+    clip-path: inset(0 0 48px 0);
+    top: 147px;
+    left: 0;
+}
+
+.buyBigEddy {
+    left: 195px;
+    top: 117px;
+}
+
+.buyLittleStart {
+    top: 142px;
+    right: 80px;
+}
+
+.buyLittleEddy {
+    top: 263px;
+    right: 22%;
+}
+
+.butLotsStart {
+    left: 0;
+    width: 100%;
+    height: 350px;
+}
+
+.buyHeadTitle {
+    display: block;
+    width: 396px;
+    padding-top: 149px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 44px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    z-index: 13;
+    font-weight: normal;
+}
+
+.buyTopic {
+    opacity: 0.6;
+    font-size: 24px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 39px;
+    text-align: center;
+    margin: 23px 0 0 0;
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.buyMain {
+    margin: 0 auto;
+    width: 978px;
+}
+
+
+.buyMain2 {
+    margin: 0 auto;
+    width: 978px;
+}
+
+.buyType {
+    margin: 30px 0 0 30px;
+    height: 360px;
+    width: 304px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    float: left;
+}
+
+.typeTop {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgba(88, 88, 88, 0.1);
+    background: #F8F8F8;
+    border-radius: 4px 4px 0 0;
+}
+
+.buyTypeTitle {
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: rgba(88, 88, 88, 1);
+    padding-top: 32px;
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+}
+
+.buyTypeTopic {
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    display: block;
+    font-size: 14px;
+    color: rgba(88, 88, 88, 0.5);
+    padding: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.buyUrlBox {
+    height: 130px;
+    width: 100%;
+    border-bottom: 1px solid rgba(88, 88, 88, 0.1);
+}
+
+.red-text {
+    color: #F56C6C
+}
+
+.rmb {
+    position: relative;
+    top: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(88, 88, 88, 0.9);
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.costRmb {
+    font-family: PingFangSC-Regular, "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: 0;
+    text-align: center;
+    display: block;
+}
+
+.freeRmb {
+    left: 117px;
+}
+
+.freeType {
+    left: 137px;
+}
+
+.companyType {
+    left: 0px;
+}
+
+.companyTypeRmb {
+    left: 82px;
+}
+
+.buyUrl {
+    display: block;
+    margin: 22px auto;
+    font-size: 14px;
+    color: #1891F0;
+    letter-spacing: 0;
+    border: 1px solid #1891F0;
+    border-radius: 8px;
+    height: 50px;
+    width: 153px;
+    text-align: center;
+    line-height: 52px;
+    transition: .2s;
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.whichMember {
+    font-weight: 200;
+    font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 16px;
+    color: #808080;
+    left: 207px;
+    top: -37px;
+}
+
+.buyIntroduce {
+    font-family: PingFangSC-Semibold, "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin: 5px 0 0 30px;
+}
+
+.introduceTitle {
+    display: block;
+    font-size: 14px;
+    color: #808080;
+    letter-spacing: 0;
+    margin: 25px 0 0 40px;
+}
+
+.intruUl {
+    margin: 5px 0 0 66px;
+    list-style: none;
+}
+
+.intruUl li {
+    font-size: 13px;
+    color: #474747;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-top: 10px;
+}
+
+.LiPoint {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #808080;
+    position: relative;
+    top: 10px;
+    left: -15px;
+}
+
+.serviceUl {
+    margin-top: 9px;
+}
+
+.backgroundBlue {
+    background: #1891F0;
+    color: #FFF;
+}
+
+.selectedTab {
+    color: #03a9f4 !important;
+}

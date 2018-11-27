@@ -10,10 +10,12 @@ SVNBucket 是一个 SVN 代码托管站，你也可以叫他 SVN 桶或码桶。
 
 # 运行方法
 使用 vue + elementUI开发。
+
 技术栈：vue + vuex + vue - router + axios + elmentUI
 
 本地跑：
 npm install
+
 npm run dev
 
 发布：

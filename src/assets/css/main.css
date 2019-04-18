@@ -44,3 +44,9 @@ a {
     background-color: #4c97da;
     height: 20px;
 }
+
+/* 修改tab底部的线条粗细 */
+.main-content-container .el-tabs__nav-wrap:after
+{
+    height: 1px;
+}

@@ -1,27 +1,24 @@
 <template>
     <div id="index">
         <div id="user-box" class="user-box">
-            <v-headbar></v-headbar>
+            <index-header></index-header>
             <router-view></router-view>
         </div>
     </div>
 </template>
 
 <script>
-    import HeadNavBar from './HeadNavbar.vue';
+    import IndexHeader from './IndexHeader.vue';
 
     export default {
         name: 'index',
         components: {
-            'v-headbar': HeadNavBar,
+            'index-header': IndexHeader,
         }
     }
 
 </script>
 
 <style>
-    @import '../../assets/css/index.css';
-  #index{
-    width: 100%;
-  }
+
 </style>

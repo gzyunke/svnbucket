@@ -93,7 +93,6 @@
     #user-lefter ul{
         height:178px;
         width:285px;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
         border-radius: 2px;
     }
 

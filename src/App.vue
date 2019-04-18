@@ -38,6 +38,11 @@
 <style>
     @import "./assets/css/main.css";
 
+    * {
+        text-decoration: none;
+        font-family: MicrosoftYaHei, 'Microsoft Yahei', 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+    }
+
     .wxminiImg
     {
         width: 300px;

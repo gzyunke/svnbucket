@@ -39,17 +39,17 @@
                 <h4 style="display: inline">{{changeFiles.length}}个文件</h4>
                 <span style="color: #808080;">（ {{updateNum}} 修改 / {{newNum}} 新增 / {{deleteNum}} 删除 ）</span>
             </div>
-            <div v-for="file in changeFiles" @click="" style="cursor: pointer;margin-top: 8px">
+            <div v-for="file in changeFiles" @click="" style="cursor: pointer;margin-top: 8px;">
                 <img v-if="file[0] === 'A'" src="../assets/img/record-add.svg">
                 <img v-if="file[0] === 'U'" src="../assets/img/record-modify.svg">
                 <img v-if="file[0] === 'D'" src="../assets/img/record-delete.svg">
-                <span @click="getFileDiff(file[1], file[0])">{{file[1]}}</span>
+                <span style=" font-family: 'Consolas', 'monaco';" @click="getFileDiff(file[1], file[0])">{{file[1]}}</span>
             </div>
         </el-dialog>
 
         <el-dialog title="" :visible.sync="diffDialogVisible" width="80%" center>
             <div v-highlight v-if="diffDialogVisible">
-                <pre><code class="javascript">{{diffContent}}</code></pre>
+                <pre><code class="javascript" style="font-family: Consolas,monaco,sans-serif;">{{diffContent}}</code></pre>
             </div>
         </el-dialog>
 

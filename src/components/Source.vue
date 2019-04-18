@@ -3,10 +3,18 @@
         <!--顶部地址栏-->
         <el-breadcrumb separator-class="el-icon-arrow-right" >
             <el-breadcrumb-item style="position: relative;left:11px;margin: 25px 10px 0 0;display: inline">
-                <div style="display: inline;" @click="jumpToPathIndex(0)"><span style="color: rgb(96, 127, 148);">{{$store.state.currProjectInfo.name}}</span></div>
+                <div style="display: inline;" @click="jumpToPathIndex(0)">
+                    <span style="color: rgb(96, 127, 148);font-family: Consolas,monaco,sans-serif;">
+                    {{$store.state.currProjectInfo.name}}
+                    </span>
+                </div>
             </el-breadcrumb-item>
             <el-breadcrumb-item v-for="(path, index) in pathList" :key="path + index" style="margin-top: 25px;display: inline" v-if="path.length > 0">
-                <div style="display: inline" @click="jumpToPathIndex(index)"><span style="color: rgb(96, 127, 148);">{{path}}</span></div>
+                <div style="display: inline" @click="jumpToPathIndex(index)">
+                    <span style="color: rgb(96, 127, 148);font-family: Consolas,monaco,sans-serif;">
+                        {{path}}
+                    </span>
+                </div>
             </el-breadcrumb-item>
         </el-breadcrumb>
 
@@ -21,10 +29,7 @@
                     <i class="el-icon-question"></i>
                 </a>
             </el-tooltip>
-            <el-input size="small" style="width:350px" class="input-with-select"
-                      :value="svnPath"
-                      id = 'svnURL'
-                      >
+            <el-input size="small" style="width:350px;font-family: Consolas,monaco,sans-serif;" class="input-with-select" :value="svnPath" id = 'svnURL'>
                 <!--@focus="selectContent"-->
                 <el-button slot="append" @click="copyURL">复制</el-button>
             </el-input>
@@ -55,11 +60,11 @@
                     <template slot-scope="scope">
                         <div @click="getFileList(scope.row.name)" style="cursor: pointer" v-if="scope.row.isDir">
                             <img src="../assets/img/detail-code-folder.svg">
-                            <span>{{scope.row.name}}</span>
+                            <span style="font-family: Consolas,monaco,sans-serif;">{{scope.row.name}}</span>
                         </div>
                         <div @click="getFileContent(scope.row.name)" style="cursor: pointer" v-else>
                             <img src="../assets/img/detail-code-file.svg">
-                            <span>{{scope.row.name}}</span>
+                            <span style="font-family: Consolas,monaco,sans-serif;">{{scope.row.name}}</span>
                         </div>
                     </template>
                 </el-table-column>
@@ -72,7 +77,7 @@
                 <el-table-column label="" prop="log" :show-overflow-tooltip="true"/>
             </el-table>
             <div v-else style="margin: 70px 0 0 10px" v-highlight>
-                <pre><code class="code-style">{{fileContent}}</code></pre>
+                <pre><code class="code-style" style="font-family: Consolas,monaco,sans-serif;">{{fileContent}}</code></pre>
             </div>
         <!--</el-card>-->
 

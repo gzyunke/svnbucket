@@ -156,6 +156,16 @@
             </div>
         </el-dialog>
 
+        <el-dialog title="删除警告" :visible.sync="deleteDialogVisible" width="400px" >
+            <div style="padding: 5px 0">即将删除用户，确认删除该用户吗？</div>
+            <div>
+                <el-checkbox v-model="deleteFromAll">从所有我管理的项目中删除该用户 <i class="el-icon-warning" style="color:#F56C6C"></i></el-checkbox>
+            </div>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="deleteDialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="doDelete">确 定</el-button>
+            </span>
+        </el-dialog>
     </div>
 
 </template>
@@ -177,6 +187,7 @@
                 selectUserDialogVisible: false,
                 permissionDialogVisible: false,
                 browserDialogVisible: false,
+                deleteDialogVisible: false,
                 keyword: '',
                 page: 1,
                 pageSize: 15,
@@ -192,7 +203,9 @@
                 checkList: [],
                 browserIndex: 0,
                 selectedPath: '',
-                permissions: []
+                permissions: [],
+                deleteUid: '',
+                deleteFromAll: false,
             }
         },
         computed: {
@@ -372,6 +385,7 @@
             },
             formateRole(role)
             {
+                let name = ''
                 if(role === 'normal')
                     name = '普通成员'
                 else if(role === 'manager')
@@ -383,6 +397,7 @@
             },
             roleStyle(role)
             {
+                let name = ''
                 if(role === 'normal')
                     name = 'info'
                 else if(role === 'manager')
@@ -415,25 +430,45 @@
             },
             handleDelete(index, row)
             {
-                let self = this;
-                this.$confirm('确定删除吗?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                }).then(() =>
+                this.deleteDialogVisible = true;
+                this.deleteUid = row.userid;
+            },
+            doDelete()
+            {
+                let self = this
+                if(this.deleteFromAll)
+                {
+                    let param = new FormData()
+                    param.append('userid', this.deleteUid)
+                    this.$axios.post('/api/deleteMembersFromAllProject', param).then(function (response)
+                    {
+                        if (response.data.success === false)
+                        {
+                            return
+                        }
+                        self.deleteDialogVisible = false;
+                        self.getMembers();
+                        self.$alert(response.data.msg, '删除成功', {
+                            confirmButtonText: '确定',
+                        });
+                    })
+                }
+                else
                 {
                     let param = new FormData()
                     param.append('projectId', this.pid)
-                    param.append('userids', row.userid)
+                    param.append('userids', this.deleteUid)
                     this.$axios.post('/api/deleteMembers', param).then(function (response)
                     {
                         if (response.data.success === false)
                         {
                             return
                         }
+                        self.deleteDialogVisible = false;
                         self.getMembers();
+                        self.$message.success("删除成功")
                     })
-                })
+                }
             },
             handleExit(index, row)
             {

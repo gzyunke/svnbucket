@@ -14,7 +14,7 @@
         </el-row>
         <el-row type="flex" justify="center">
             <el-col>
-                <el-input v-model="username" :maxlength="100" class="center-row" placeholder="SVN 用户名（字母、数字、下划线的组合）"/>
+                <el-input v-model="username" :maxlength="100" class="center-row" placeholder="SVN 账号（字母、数字、下划线的组合）"/>
             </el-col>
         </el-row>
         <el-row type="flex" justify="center">

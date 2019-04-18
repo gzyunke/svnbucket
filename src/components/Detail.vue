@@ -4,7 +4,7 @@
             <el-aside width="170px">
                 <v-sidebar :pid="pid"/>
             </el-aside>
-            <el-main style="width:100px; margin: -25px 0 0 0">
+            <el-main style="width:100px; margin: -15px 0 0 0">
                 <router-view />
             </el-main>
         </el-container>
@@ -67,3 +67,10 @@
         }
     }
 </script>
+
+<style>
+    #detail h4 {
+        font-size: 14px;
+        color: #909399;
+    }
+</style>

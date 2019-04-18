@@ -9,7 +9,7 @@
         </el-row>
         <el-row type="flex" justify="center">
             <el-col>
-                <el-input v-model="username" :maxlength="100" class="center-row" placeholder="SVN 用户名（不是邮箱）"/>
+                <el-input v-model="username" :maxlength="100" class="center-row" placeholder="SVN 账号（不是邮箱）"/>
             </el-col>
         </el-row>
         <el-row type="flex" justify="center">

@@ -2,9 +2,10 @@
     <div id="main">
         <el-container>
             <el-header>
-                <v-header/>
+
+                <header-c></header-c>
             </el-header>
-            <el-main>
+            <el-main style="padding: 10px 20px">
                 <router-view/>
             </el-main>
         </el-container>
@@ -12,7 +13,8 @@
 </template>
 
 <script>
-    import header from './Header.vue'
+
+    import HeaderC from "./HeaderC";
 
     export default {
         data()
@@ -25,7 +27,7 @@
             {},
         components:
             {
-                'v-header': header,
+                HeaderC,
             },
     }
 </script>

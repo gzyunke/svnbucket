@@ -3,15 +3,24 @@
         <el-card class="box-card" style="width:600px; height:600px; margin-top: -15px">
             <el-form label-width="20px" label-position="top">
                 <el-form-item label="">
-                    <el-upload
-                            style="float: left;margin-right:15px"
-                            action=""
-                            :show-file-list="false"
-                            :on-success="onUploadSuccess"
-                            :before-upload="beforeUpload"
-                            :http-request="upload2Cos">
-                        <img :src="fullHeadURL" style="border-radius:200px;width:150px;height:150px">
-                    </el-upload>
+                    <!--<el-upload-->
+                            <!--style="float: left;margin-right:15px"-->
+                            <!--action=""-->
+                            <!--:show-file-list="false"-->
+                            <!--:on-success="onUploadSuccess"-->
+                            <!--:before-upload="beforeUpload"-->
+                            <!--:http-request="upload2Cos">-->
+                        <!--<img :src="fullHeadURL" style="border-radius:200px;width:150px;height:150px">-->
+                    <!--</el-upload>-->
+                    <div class="user-head">
+                        <div class="img-wrapper" style="position: relative; border-radius: 50%; width: 150px; height: 150px; overflow: hidden; cursor: pointer;" @click="picUpload">
+                            <div class="img-cover"><el-button type="info" plain size="small">更换头像</el-button></div>
+                            <img v-if="head" :src="imgFullURL(head)" style="border-radius: 50%; width: 150px; height: 150px;">
+                            <i v-else class="el-icon-plus avatar-uploader-icon" style="display: block; width: 14px; margin: 49px auto;"></i>
+                        </div>
+                        <input type="file" ref="uploadPic" style="display: none;" @change="openPicCutDialog($event)">
+                        <!--<el-button type="primary" size="small" style="position: absolute; top: 30px; right: 192px;" @click="picUpload">上传封面</el-button>-->
+                    </div>
                 </el-form-item>
                 <el-form-item label="">
                     <el-popover
@@ -59,6 +68,29 @@
                 </el-form-item>
             </el-form>
         </el-card>
+
+        <el-dialog title="图片裁剪" class="pic-cut-dialog" :visible.sync="visible.picCutDialog" width="800px" @opened="changePic">
+            <div style="width: 100%; height: 500px;">
+                <vueCropper
+                        ref="cropper2"
+                        :img="example2.img"
+                        :outputSize="example2.size"
+                        :outputType="example2.outputType"
+                        :info="example2.info"
+                        :canScale="example2.canScale"
+                        :autoCrop="example2.autoCrop"
+                        :autoCropWidth="example2.autoCropWidth"
+                        :autoCropHeight="example2.autoCropHeight"
+                        :fixed="example2.fixed"
+                        :fixedNumber="example2.fixedNumber"
+                ></vueCropper>
+            </div>
+            <input type="file" ref="changePic" style="display: none;" @change="uploadImg($event, 2)">
+            <div style="margin-top: 10px;">
+                <el-button type="primary" plain @click="picCut">确定</el-button>
+                <el-button type="primary" plain @click="changePic">更换图片</el-button>
+            </div>
+        </el-dialog>
     </div>
 
 </template>
@@ -76,6 +108,23 @@
                 textSign:'1',
                 fileName:'',
                 cosFullPath:'',
+                visible: {
+                    picCutDialog: false,
+                },
+                example2: {
+                    img: '',
+                    info: true,
+                    size: 1,
+                    outputType: 'png',
+                    canScale: true,
+                    autoCrop: true,
+                    // 只有自动截图开启 宽度高度才生效
+                    autoCropWidth: 300 ,
+                    autoCropHeight: 250 ,
+                    // 开启宽度和高度比例
+                    fixed: true,
+                    fixedNumber: [1, 1]
+                },
             }
         },
         computed:
@@ -91,6 +140,75 @@
             }
         },
         methods:{
+            imgFullURL(url) {
+                return tools.imgFullPath(url, 'head', 5, 70)
+                // return tools.CDN_ROOT + "/cover/" + url
+                // + "?imageView2/1/w/258/h/129";
+            },
+            picUpload() {
+                return this.$refs.uploadPic.click();
+            },
+            picCut() {
+                // console.log(this.$refs.cropper2);
+                this.$refs.cropper2.getCropData((data) => {
+                    // console.log(data);
+                    let file = this.dataURL2File(data, 'new' + Math.ceil(Math.random()*20181026) );
+                    this.upload2Cos(file);
+                    this.visible.picCutDialog = false;
+                })
+            },
+            changePic() {
+                this.$refs.changePic.click();
+            },
+            openPicCutDialog(e) {
+                this.uploadImg(e, 2);
+                // console.log(e);
+            },
+            uploadImg (e, num) {
+                let max_size = 5 * 1024;
+                //上传图片
+                // this.option.img
+                var file = e.target.files[0];
+                if (!/\.(gif|jpg|jpeg|png|bmp|GIF|JPG|PNG)$/.test(e.target.value)) {
+                    this.$message.error('图片类型必须是.gif,jpeg,jpg,png,bmp中的一种');
+                    return false
+                }else if (file.size > max_size * 1024) {
+                    this.$message.error("图片大小不能超过5M");
+                    e.target.value = "";
+                    return false;
+                }
+
+                this.visible.picCutDialog = true;
+
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    let data;
+                    if (typeof e.target.result === 'object') {
+                        // 把Array Buffer转化为blob 如果是base64不需要
+                        data = window.URL.createObjectURL(new Blob([e.target.result]))
+                    } else {
+                        data = e.target.result;
+                    }
+                    if (num === 1) {
+                        this.option.img = data;
+                    } else if (num === 2) {
+                        this.example2.img = data;
+                    }
+                };
+                // 转化为base64
+                // reader.readAsDataURL(file)
+                // 转化为blob
+                reader.readAsArrayBuffer(file);
+                e.target.value = '';
+            },
+            dataURL2File(dataURL, filename) {//将base64转换为文件
+                var arr = dataURL.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                while(n--){
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                return new File([u8arr], filename, {type:mime});
+            },
             saveUserInfo()
             {
                 let self = this;
@@ -186,10 +304,10 @@
                 {
                     console.log('uploading... curr progress is ' + curr);
                 };
-                this.fileName = this.$store.state.userData.username + "_" + data.file.name;
+                this.fileName = this.$store.state.userData.username + "_" + data.name;
                 this.cosFullPath = '/head/' + this.fileName;
-                console.log('file name:' + data.file.name);
-                this.cos.uploadFile(successCallBack, errorCallBack, progressCallBack, tools.COS_BUCKET_NAME, this.cosFullPath, data.file, 0);
+                console.log('file name:' + data.name);
+                this.cos.uploadFile(successCallBack, errorCallBack, progressCallBack, tools.COS_BUCKET_NAME, this.cosFullPath, data, 0);
             },
             getCosSign(callback)
             {
@@ -244,5 +362,21 @@
 
     .avatar-uploader-icon:hover {
         border-color: #409EFF;
+    }
+    .img-wrapper:hover .img-cover {
+        display: block;
+    }
+    .img-cover {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        color: #fbfbfb;
+        font-size: 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, .2);
     }
 </style>

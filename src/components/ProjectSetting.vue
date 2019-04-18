@@ -2,15 +2,24 @@
     <div>
         <el-form :model="formData" label-width="80px" label-position="top">
             <el-form-item label="项目封面">
-                <el-upload
-                        style="float: left;margin-right:15px"
-                        action=""
-                        :show-file-list="false"
-                        :on-success="onUploadSuccess"
-                        :http-request="upload2Cos">
-                    <img v-if="formData.imgURL" :src="imgFullURL(formData.imgURL)" style="border-radius:5px; width: 258px; height: 129px">
-                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                </el-upload>
+                <!--<el-upload-->
+                        <!--style="float: left;margin-right:15px"-->
+                        <!--action=""-->
+                        <!--:show-file-list="false"-->
+                        <!--:on-success="onUploadSuccess"-->
+                        <!--:http-request="upload2Cos">-->
+                    <!--<img v-if="formData.imgURL" :src="imgFullURL(formData.imgURL)" style="border-radius:5px; width: 258px; height: 129px">-->
+                    <!--<i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
+                <!--</el-upload>-->
+                <div class="project-cover" style="position: relative;">
+                    <div class="img-wrapper" style="position: relative; width: 258px; height: 129px; cursor: pointer;" @click="picUpload">
+                        <div class="img-cover" style="position: absolute; top: 45px;right: -100px;"><el-button type="primary" size="small" plain>更换封面</el-button></div>
+                        <img v-if="formData.imgURL" :src="imgFullURL(formData.imgURL)" style="width: 258px; height: 129px; border-radius: 5px">
+                        <i v-else class="el-icon-plus avatar-uploader-icon" style="display: block; width: 14px; margin: 49px auto;"></i>
+                    </div>
+                    <input type="file" ref="uploadPic" style="display: none;" @change="openPicCutDialog($event)">
+                    <el-button type="primary" size="small" plain @click.stop="visible.defaultCoverDialog = true" style="position: absolute; bottom: 0; left: 278px;">默认封面</el-button>
+                </div>
             </el-form-item>
             <el-form-item label="项目名字">
                 <el-popover
@@ -61,6 +70,38 @@
                 <el-button type="danger" @click="transferProject" :disabled="selectedUid.length <= 0">转让给Ta</el-button>
             </div>
         </el-dialog>
+
+        <el-dialog title="图片裁剪" class="pic-cut-dialog" :visible.sync="visible.picCutDialog" width="800px" @opened="changePic">
+            <div style="width: 100%; height: 500px;">
+                <vueCropper
+                        ref="cropper2"
+                        :img="example2.img"
+                        :outputSize="example2.size"
+                        :outputType="example2.outputType"
+                        :info="example2.info"
+                        :canScale="example2.canScale"
+                        :autoCrop="example2.autoCrop"
+                        :autoCropWidth="example2.autoCropWidth"
+                        :autoCropHeight="example2.autoCropHeight"
+                        :fixed="example2.fixed"
+                        :fixedNumber="example2.fixedNumber"
+                ></vueCropper>
+            </div>
+            <input type="file" ref="changePic" style="display: none;" @change="uploadImg($event, 2)">
+            <div style="margin-top: 10px;">
+                <el-button type="primary" plain @click="picCut">确定</el-button>
+                <el-button type="primary" plain @click="changePic">更换图片</el-button>
+            </div>
+        </el-dialog>
+
+        <el-dialog title="默认封面" class="default-cover-dialog" :visible.sync="visible.defaultCoverDialog" width="700px" >
+            <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
+                <div class="default-cover-item" v-for="i in 9" :key="i" style="margin-bottom: 8px;" @click="chooseCover(i)">
+                    <img :src="'https://svnbucket-1255322048.image.myqcloud.com/cover/'+ i +'.png?imageView2/1/w/258/h/129'" style="width: 200px; height: calc(200/258*129px); border-radius: 5px">
+                </div>
+            </div>
+        </el-dialog>
+
     </div>
 </template>
 
@@ -86,10 +127,29 @@
                 searchList: [],
                 selectedUid:'',
                 cosFullPath: '',
+                visible: {
+                    picCutDialog: false,
+                    defaultCoverDialog: false,
+                },
+                example2: {
+                    img: '',
+                    info: true,
+                    size: 1,
+                    outputType: 'png',
+                    canScale: true,
+                    autoCrop: true,
+                    // 只有自动截图开启 宽度高度才生效
+                    autoCropWidth: 300 ,
+                    autoCropHeight: 250 ,
+                    // 开启宽度和高度比例
+                    fixed: true,
+                    fixedNumber: [258, 129]
+                },
             }
         },
         computed:
         {
+
             isChanged()
             {
                 var oldInfo = this.$store.state.currProjectInfo
@@ -110,6 +170,77 @@
         },
         methods:
         {
+            chooseCover(i) {
+                this.formData.imgURL = 'https://svnbucket-1255322048.image.myqcloud.com/cover/'+ i +'.png?imageView2/1/w/258/h/129';
+                this.visible.defaultCoverDialog = false;
+            },
+            uploadImg (e, num) {
+                let max_size = 5 * 1024;
+                //上传图片
+                // this.option.img
+                var file = e.target.files[0];
+                if (!/\.(gif|jpg|jpeg|png|bmp|GIF|JPG|PNG)$/.test(e.target.value)) {
+                    this.$message.error('图片类型必须是.gif,jpeg,jpg,png,bmp中的一种');
+                    return false
+                }else if (file.size > max_size * 1024) {
+                    this.$message.error("图片大小不能超过5M");
+                    e.target.value = "";
+                    return false;
+                }
+
+                this.visible.picCutDialog = true;
+
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    let data;
+                    if (typeof e.target.result === 'object') {
+                        // 把Array Buffer转化为blob 如果是base64不需要
+                        data = window.URL.createObjectURL(new Blob([e.target.result]))
+                    } else {
+                        data = e.target.result;
+                    }
+                    if (num === 1) {
+                        this.option.img = data;
+                    } else if (num === 2) {
+                        this.example2.img = data;
+                    }
+                };
+                // 转化为base64
+                // reader.readAsDataURL(file)
+                // 转化为blob
+                reader.readAsArrayBuffer(file);
+                e.target.value = '';
+            },
+            openPicCutDialog(e) {
+                this.uploadImg(e, 2);
+                // console.log(e);
+            },
+            picUpload() {
+                return this.$refs.uploadPic.click();
+            },
+            picCut() {
+                // console.log(this.$refs.cropper2);
+                this.$refs.cropper2.getCropData((data) => {
+                    // console.log(data);
+                    let file = this.dataURL2File(data, 'new' + Math.ceil(Math.random()*20181026) );
+                    this.upload2Cos(file);
+                    this.visible.picCutDialog = false;
+                })
+            },
+            changePic() {
+                this.$refs.changePic.click();
+            },
+            dataURL2File(dataURL, filename) {//将base64转换为文件
+                var arr = dataURL.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                while(n--){
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                return new File([u8arr], filename, {type:mime});up
+            },
+
+
+
             onUploadSuccess(response)
             {
                 if (response.success === false)
@@ -174,10 +305,11 @@
                 {
                     console.log('uploading... curr progress is ' + curr);
                 };
-                this.fileName = Math.floor(new Date().getTime() / 1000) + "_" + data.file.name;
+                console.log(data.name);
+                this.fileName = Math.floor(new Date().getTime() / 1000) + "_" + data.name;
                 this.cosFullPath = '/cover/' + this.fileName;
                 console.log('file name:' + this.cosFullPath);
-                this.cos.uploadFile(successCallBack, errorCallBack, progressCallBack, tools.COS_BUCKET_NAME, this.cosFullPath, data.file, 0);
+                this.cos.uploadFile(successCallBack, errorCallBack, progressCallBack, tools.COS_BUCKET_NAME, this.cosFullPath, data, 0);
             },
             getCosSign(callback)
             {

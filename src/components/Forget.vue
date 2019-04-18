@@ -9,7 +9,7 @@
         </el-row>
         <el-row type="flex" justify="center">
             <el-col>
-                <el-input v-model="username" class="center-row" placeholder="用户名 / 邮箱" @keyup.enter.native="sendMail"/>
+                <el-input v-model="username" class="center-row" placeholder="SVN 账号 / 密保邮箱" @keyup.enter.native="sendMail"/>
             </el-col>
         </el-row>
         <el-row type="flex" justify="center">

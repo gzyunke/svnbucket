@@ -1,6 +1,6 @@
 <template>
     <div id="hide-user-box">
-        <ul @click="setShowUserOperateWindow(false)">
+        <ul @click="">
             <router-link to="/user/info">
                 <li class="accout-setting">
                     <div class="li-lefter"></div>
@@ -89,7 +89,7 @@
         position: absolute;
         top: 70px;
         z-index: 100;
-        right: 20px;
+        right: 5px;
     }
 
     #hide-user-box div {

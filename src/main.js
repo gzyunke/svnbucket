@@ -6,6 +6,9 @@ import axios from 'axios'
 import infiniteScroll from 'vue-infinite-scroll'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';    // 默认主题
+import VueCropper from 'vue-cropper'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
@@ -19,7 +22,9 @@ Vue.directive('highlight', function (el) {
 })
 
 Vue.use(ElementUI);
+Vue.use(VueCropper);
 Vue.use(infiniteScroll)
+Vue.use(mavonEditor)
 Vue.prototype.$axios = axios;
 let vm = new Vue({
     router,
@@ -50,7 +55,7 @@ axios.interceptors.request.use((config) =>
     }, 500);
 
     var token = window.localStorage.getItem('svnbucketToken');
-    config.headers.common['Authorization'] = token;
+    config.headers.common['Authorization'] = token
     return config;
 },
 (error) =>

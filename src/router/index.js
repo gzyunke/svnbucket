@@ -10,11 +10,17 @@ const router = new Router({
             children: [
                 {
                     path: '',
-                    component: resolve => require(['../components/Projects.vue'], resolve)
-                },
-                {
-                    path: '/projects',
-                    component: resolve => require(['../components/Projects.vue'], resolve)
+                    component: resolve => require(['../components/ProjectsLayout.vue'], resolve),
+                    children: [
+                        {
+                            path: '',
+                            component: resolve => require(['../components/Projects.vue'], resolve),
+                        },
+                        {
+                            path: '/projects-dynamic',
+                            component: resolve => require(['../components/ProjectsDynamic.vue'], resolve),
+                        },
+                    ]
                 },
                 {
                     path: '/detail/:pid',
@@ -122,19 +128,19 @@ const router = new Router({
             children: [
                 {
                     path: '',
-                    component: resolve => require(['../components/index/Index.vue'], resolve)
+                    component: resolve => require(['../components/index/indexContent.vue'], resolve)
                 },
                 {
                     path: '/about',
-                    component: resolve => require(['../components/index/About.vue'], resolve)
+                    component: resolve => require(['../components/index/AboutUs.vue'], resolve)
                 },
                 {
                     path: '/download',
                     component: resolve => require(['../components/index/Download.vue'], resolve)
                 },
                 {
-                    path: '/buy',
-                    component: resolve => require(['../components/index/Buy.vue'], resolve)
+                    path: '/package',
+                    component: resolve => require(['../components/index/Package.vue'], resolve)
                 }
             ]
         },

@@ -1,48 +1,43 @@
 <template>
     <div>
         <el-card class="box-card" style="width:600px; height:350px; margin-top: -15px" width="100%">
-            <el-form label-position="left" class="demo-table-expand" width="100%">
+            <el-form label-position="left" class="demo-table-expand" width="100%" >
                 <el-form-item label="账户类型:">
-                    <span :class="[{vipColor:$store.state.userData.accountType > 0}]">{{accountTypeName}}</span>
+                    <span class="value-text" v-if="isExpired">免费用户</span>
+                    <span style="color: #F56C6C; font-weight: 600" v-else>{{accountTypeName}}</span>
                 </el-form-item>
-                <el-form-item label="失效日期:" v-if="$store.state.userData.accountType > 0">
+                <el-form-item label="失效日期:">
                     <span :class="[{redText:isExpired}]">
                         {{formatData($store.state.userData.expireAt)}}
                     </span>
                 </el-form-item>
                 <el-form-item label="项目成员:">
-                    <span>无限制</span>
+                    <span class="value-text">无限制</span>
                 </el-form-item>
                 <el-form-item label="项目个数:">
-                    <span>无限制</span>
+                    <span class="value-text">无限制</span>
                 </el-form-item>
                 <el-form-item label="仓库空间:">
-                    <span :class="[{redText:$store.state.userData.reposSize >= $store.state.userData.reposMaxSize}]">
+                    <span class="value-text" :class="[{redText:$store.state.userData.reposSize >= $store.state.userData.reposMaxSize}]">
                         {{formateSize($store.state.userData.reposSize) }} / {{formateSize($store.state.userData.reposMaxSize)}}
                     </span>
                 </el-form-item>
                 <el-form-item label="" style="margin-top: 20px">
-                    <template v-if="isExpired">
-                        <el-tooltip content="助力我们更好的发展" placement="right">
-                            <el-button type="primary" @click="buy">
-                                购买空间
-                            </el-button>
-                        </el-tooltip>
-                    </template>
-                    <template v-else>
-                        <el-button type="primary" @click="extendTime">续费</el-button>
-                        <el-button type="primary" @click="upgrade">升级</el-button>
-                    </template>
+                    <el-tooltip content="助力我们更好的发展" placement="right">
+                        <el-button type="primary" @click="showBuyDialog">
+                            购买升级
+                        </el-button>
+                    </el-tooltip>
                 </el-form-item>
                 <div style="color: #909399; font-size: 12px; margin-top: 20px"><i class="el-icon-info">
-                    </i>  我们提供企业定制服务和私有部署，有需要欢迎联系我们
+                    </i>  我们提供私有部署，有需要欢迎联系我们；如需发票，请购买后联系客服。
                 </div>
             </el-form>
         </el-card>
 
         <el-dialog title="购买" :visible.sync="dialogVisible" width="500px">
             <el-form label-width="60px" label-position="top">
-                <el-form-item label="帐号类型" v-if="buyType !== 1">
+                <el-form-item label="帐号类型">
                     <el-select v-model="accountType" placeholder="请选择" style="width: 450px;">
                         <el-option
                                 v-for="item in typeOptions"
@@ -53,10 +48,10 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="时间" v-if="buyType !== 2">
+                <el-form-item label="时间">
                     <el-radio-group v-model="month" size="medium">
+                        <el-radio-button label="0" v-if="!isExpired">不变</el-radio-button>
                         <el-radio-button label="1">1月</el-radio-button>
-                        <el-radio-button label="2">2月</el-radio-button>
                         <el-radio-button label="3">3月</el-radio-button>
                         <el-radio-button label="6">6月</el-radio-button>
                         <el-radio-button label="12">1年</el-radio-button>
@@ -70,13 +65,13 @@
             </el-form>
 
             <div slot="footer" class="dialog-footer">
-                <el-button type="primary" @click="requestBuy">微信购买</el-button>
+                <el-button type="success" @click="requestBuy" :disabled="totalMoney <= 0">微信购买</el-button>
             </div>
         </el-dialog>
 
         <el-dialog title="微信扫码支付" :visible.sync="buyDialogVisible" width="360px" align="center" @close="onCloseQRCode">
             <div id="qrcode"></div>
-            <span style="margin-top: 30px; color: #67C23A; font-weight: bold">微信扫一扫付款</span>
+            <span style="color: #67C23A; font-weight: bold; margin: 10px 0">微信扫一扫付款 ￥{{totalMoney}}</span>
         </el-dialog>
     </div>
 
@@ -90,8 +85,6 @@
             return {
                 dialogVisible: false,
                 buyDialogVisible:false,
-                // 0购买，1续费，2升级
-                buyType:0,
                 typeOptions: [],
                 discountConfig: {},
                 accountTypeNameDict:{},
@@ -99,39 +92,38 @@
                 month: 12,
                 orderid:'',
                 timerId:false,
-                accountType: '',
-                maxAccountType:'',
+                accountType: this.$store.state.userData.accountType,
+                nextAccountType: this.$store.state.userData.accountType,
             }
         },
-        mounted()
+        created()
         {
-            if(MtaH5)
-                MtaH5.clickStat('goumailiucheng',{'onuserstatepage':'true'});
             this.getShopConfig()
         },
         computed:{
             totalMoney()
             {
                 let discount = this.discountConfig[this.month] ? this.discountConfig[this.month] : 1;
-                let money = 0;
-                // 0购买，1续费，2升级
-                if(this.buyType === 0)
+                let upgradeMoney = 0;
+                let now = new Date().getTime() / 1000;
+                let remainSeconds = this.$store.state.userData.expireAt - now;
+                if(remainSeconds < 0)
+                    remainSeconds = 0
+
+                // 如果之前购买的还没到期，套餐又不一样，计算升级差价
+                if(remainSeconds > 0 && this.accountType !== this.$store.state.userData.accountType)
                 {
-                    money = this.moneyDict[this.accountType] * this.month * discount
+                    let oldMonthPrice = this.moneyDict[this.$store.state.userData.accountType];
+                    let newMonthPrice = this.moneyDict[this.accountType];
+                    let diffPrice = newMonthPrice - oldMonthPrice;
+                    console.log('remainSeconds:' + remainSeconds + ', old price:' + oldMonthPrice + ', new price:' + newMonthPrice)
+                    if(diffPrice > 0)
+                        upgradeMoney = diffPrice * (remainSeconds / (86400 * 30))
                 }
-                else if(this.buyType === 1)
-                {
-                    money = this.moneyDict[this.$store.state.userData.accountType] * this.month * discount
-                }
-                else if(this.buyType === 2)
-                {
-                    let now = new Date().getTime() / 1000;
-                    let remainSeconds = this.$store.state.userData.expireAt - now
-                    let oldMonthPrice = this.moneyDict[this.$store.state.userData.accountType]
-                    let newMonthPrice = this.moneyDict[this.accountType]
-                    money = ((newMonthPrice - oldMonthPrice) / (86400 * 30)) * remainSeconds
-                }
-                return tools.round(money, 2)
+
+                let newBuyMoney = this.moneyDict[this.accountType] * this.month * discount;
+                console.log('upgradeMoney:' + upgradeMoney + ', newBuyMoney:' + newBuyMoney);
+                return tools.round(newBuyMoney + upgradeMoney, 2)
             },
             discountName()
             {
@@ -161,55 +153,20 @@
             },
             isDisable(value)
             {
-                if(this.buyType !== 2)
-                    return value < this.$store.state.userData.accountType
-                else
-                    return value <= this.$store.state.userData.accountType
+                return value < this.$store.state.userData.accountType
             },
-            upgrade()
+            showBuyDialog()
             {
-                if(this.$store.state.userData.accountType >= this.maxAccountType)
+                this.nextAccountType = this.$store.state.userData.accountType;
+                for(let index in this.typeOptions)
                 {
-                    this.$alert('你已经是最高等级了，如需定制服务，请联系我们：gzyunke@qq.com', '提示', {
-                        confirmButtonText: '确定',
-                    });
-                    return
-                }
-                this.buyType = 2
-                this.month = 0
-
-                let nextAccountType = this.$store.state.userData.accountType;
-                for(let i=0; i < this.typeOptions.length; i++)
-                {
-                    if(this.typeOptions[i].value > nextAccountType)
-                    {
-                        nextAccountType = this.typeOptions[i].value
+                    this.nextAccountType = this.typeOptions[index].value;
+                    if(this.typeOptions[index].value > this.$store.state.userData.accountType)
                         break;
-                    }
                 }
-
-                this.accountType = nextAccountType + ''
+                this.accountType = this.nextAccountType + '';
+                this.month = 12;
                 this.dialogVisible = true
-                if(MtaH5)
-                    MtaH5.clickStat('goumailiucheng',{'clickbuy':'true'});
-            },
-            extendTime()
-            {
-                this.buyType = 1
-                this.month = 12
-                this.accountType = this.$store.state.userData.accountType + ''
-                this.dialogVisible = true
-                if(MtaH5)
-                    MtaH5.clickStat('goumailiucheng',{'clickbuy':'true'});
-            },
-            buy()
-            {
-                this.accountType = (this.$store.state.userData.accountType + 1) + ''
-                this.month = 12
-                this.buyType = 0
-                this.dialogVisible = true
-                if(MtaH5)
-                    MtaH5.clickStat('goumailiucheng',{'clickbuy':'true'});
             },
             getShopConfig()
             {
@@ -226,7 +183,6 @@
                         self.$set(self.accountTypeNameDict, key, config['name']);
                         if (config['money'] > 0)
                         {
-                            self.maxAccountType = key;
                             self.typeOptions.push({
                                 label: config['name'] + '，空间：' + config['reposMaxSize'] / 1024 + 'G，' + config['money'] + '元/月',
                                 value: key
@@ -241,7 +197,6 @@
                 let params = new FormData();
                 params.append('accountType', this.accountType)
                 params.append('month', this.month)
-                params.append('buyType', this.buyType)
                 params.append('totalMoney', this.totalMoney)
                 this.$axios.post('/api/createOrder', params).then((res) =>
                 {
@@ -255,8 +210,8 @@
                     self.checkPayResult()
 
                 })
-                if(MtaH5)
-                    MtaH5.clickStat('goumailiucheng',{'clickwxbuy':'true'});
+                // if(MtaH5)
+                //     MtaH5.clickStat('goumailiucheng',{'clickwxbuy':'true'});
             },
             checkPayResult()
             {
@@ -280,8 +235,8 @@
                             self.dialogVisible = false
                             self.buyDialogVisible = false
                             self.getUserInfo()
-                            if(MtaH5)
-                                MtaH5.clickStat('goumailiucheng',{'buysuccess':'true'});
+                            // if(MtaH5)
+                            //     MtaH5.clickStat('goumailiucheng',{'buysuccess':'true'});
                         }
                     })
 
@@ -334,6 +289,11 @@
 <style scoped>
     .demo-table-expand {
         font-size: 0;
+    }
+
+    .value-text {
+        color: #606266;
+        font-size: 14px
     }
 
     .demo-table-expand label {
